@@ -8,12 +8,13 @@
 - [x] Sizedbox widget
 - [x] Image widget
 - [x] Row Widget
-- [ ] Center widget
-- [ ] Card widget
+- [x] Center widget
+- [x] Card widget
+- [x] CircularAvatar widget
+- [x] SingleChildScrollView widget
 - [ ] Listview widget
 - [ ] Listtile widget
-- [ ] SingleChildScrollView widget
-- [ ] CircularAvatar widget
+- [ ] Listview.builder
 
 <hr>
 
