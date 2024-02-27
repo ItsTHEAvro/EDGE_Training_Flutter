@@ -2,26 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'homepage.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    _navigateToHome();
-  }
-
-  _navigateToHome() async {
-    await Future.delayed(const Duration(milliseconds: 1500), () {});
+  void goToNextPage(context) {
     Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => const MyHomePage(title: "Test")));
+        context, MaterialPageRoute(builder: (context) => const MyHomePage()));
   }
 
   @override
@@ -36,32 +22,61 @@ class _SplashScreenState extends State<SplashScreen> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: <Color>[
-              Color.fromARGB(255, 108, 108, 208),
-              Color.fromARGB(255, 171, 201, 224),
+              Color.fromARGB(255, 121, 87, 180),
+              Color.fromARGB(255, 103, 58, 183),
+              Color.fromARGB(255, 85, 34, 172),
+              Color.fromARGB(255, 103, 58, 183),
+              Color.fromARGB(255, 121, 87, 180),
             ],
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              margin: const EdgeInsets.only(bottom: 20),
-              child: const Image(
-                image: AssetImage('assets/images/splash_logo.png'),
-                width: 150,
-                height: 150,
-              ),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Container(
+            margin: const EdgeInsets.only(bottom: 20),
+            child: const Image(
+              image: AssetImage('assets/images/splash_logo.png'),
+              width: 150,
+              height: 150,
             ),
-            Text(
-              "Sayem Bhai's Flutter Task 1".toUpperCase(),
-              style: const TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                letterSpacing: 3,
-              ),
+          ),
+          Text(
+            "Flutter Task 1".toUpperCase(),
+            style: const TextStyle(
+              fontFamily: 'Micro5',
+              fontSize: 40,
+              color: Colors.white,
+              letterSpacing: 3,
             ),
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                "Next Page",
+                style: TextStyle(
+                  fontFamily: 'Micro5',
+                  color: Colors.white,
+                  fontSize: 30,
+                ),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  goToNextPage(context);
+                },
+                child: const Icon(Icons.arrow_right),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+        ]),
       ),
     );
   }

@@ -1,19 +1,19 @@
 ### To try out
 
-- [ ] Scaffold widget
-- [ ] Container widget
-- [ ] Row Widget
-- [ ] Column widget
-- [ ] Text widget
-- [ ] Sizedbox widget
+- [x] Scaffold widget
+- [x] Container widget
+- [x] Decorating property of container
+- [x] Column widget
+- [x] Text widget
+- [x] Sizedbox widget
+- [x] Image widget
+- [x] Row Widget
 - [ ] Center widget
 - [ ] Card widget
 - [ ] Listview widget
 - [ ] Listtile widget
 - [ ] SingleChildScrollView widget
-- [ ] CircularAvater widget
-- [ ] Imagewidget widget
-- [ ] Decorating property of container
+- [ ] CircularAvatar widget
 
 <hr>
 
