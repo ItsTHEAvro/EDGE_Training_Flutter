@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -44,11 +45,46 @@ class MyHomePage extends StatelessWidget {
               child: Text(
                 'SingleChildScrollView',
                 style: TextStyle(
-                    fontFamily: 'Times New Roman',
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: 25,
-                    letterSpacing: 2,
-                    fontWeight: FontWeight.bold),
+                  fontFamily: 'Times New Roman',
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  fontSize: 25,
+                  letterSpacing: 2,
+                  shadows: [
+                    Shadow(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      blurRadius: 10,
+                      offset: Offset(1, 1),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Next Page",
+                    style: TextStyle(
+                      fontFamily: 'Times New Roman',
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MyHomePage()));
+                    },
+                    child: const Icon(Icons.arrow_right),
+                  ),
+                ],
               ),
             ),
             Expanded(
