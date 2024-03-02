@@ -57,9 +57,9 @@ class SplashScreen extends StatelessWidget {
               const Text(
                 "Next Page",
                 style: TextStyle(
-                  fontFamily: 'Micro5',
+                  fontFamily: 'Times New Roman',
                   color: Colors.white,
-                  fontSize: 30,
+                  fontSize: 20,
                 ),
               ),
               const SizedBox(

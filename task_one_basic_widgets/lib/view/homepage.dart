@@ -44,10 +44,11 @@ class MyHomePage extends StatelessWidget {
               child: Text(
                 'SingleChildScrollView',
                 style: TextStyle(
-                    fontFamily: 'Micro5',
+                    fontFamily: 'Times New Roman',
                     color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: 40,
-                    letterSpacing: 2),
+                    fontSize: 25,
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.bold),
               ),
             ),
             Expanded(
