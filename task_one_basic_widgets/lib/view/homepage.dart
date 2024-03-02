@@ -7,17 +7,52 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Stack(children: [
-          Container(
-            height: MediaQuery.sizeOf(context).height,
-            width: MediaQuery.sizeOf(context).width,
-            color: Colors.red,
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              physics: const AlwaysScrollableScrollPhysics(),
-              child: Container(
-                margin: EdgeInsets.only(
-                    top: MediaQuery.sizeOf(context).height * .25),
+        child: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[
+                Color.fromARGB(255, 121, 87, 180),
+                Color.fromARGB(255, 103, 58, 183),
+                Color.fromARGB(255, 85, 34, 172),
+                Color.fromARGB(255, 103, 58, 183),
+                Color.fromARGB(255, 121, 87, 180),
+              ],
+            ),
+          ),
+          child: Column(children: [
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: Card(
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(100.0),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(5),
+                  child: CircleAvatar(
+                    radius: 50,
+                    backgroundImage:
+                        AssetImage('assets/images/splash_logo.png'),
+                  ),
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(5),
+              child: Text(
+                'SingleChildScrollView',
+                style: TextStyle(
+                    fontFamily: 'Micro5',
+                    color: Color.fromARGB(255, 0, 0, 0),
+                    fontSize: 40,
+                    letterSpacing: 2),
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
                 child: Column(
                   children: [
                     Row(children: [
@@ -138,44 +173,8 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          Container(
-            height: MediaQuery.sizeOf(context).height * .25,
-            width: MediaQuery.sizeOf(context).width,
-            color: Colors.blue,
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Padding(
-                padding: const EdgeInsets.all(5),
-                child: Card(
-                  elevation: 10,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(100.0),
-                  ),
-                  child: const Padding(
-                    padding: EdgeInsets.all(5),
-                    child: CircleAvatar(
-                      radius: 50,
-                      backgroundImage:
-                          AssetImage('assets/images/splash_logo.png'),
-                    ),
-                  ),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(5),
-                child: Text(
-                  'SingleChildScrollView',
-                  style: TextStyle(
-                      fontFamily: 'Micro5',
-                      color: Color.fromARGB(255, 0, 0, 0),
-                      fontSize: 40,
-                      letterSpacing: 2),
-                ),
-              ),
-            ]),
-          ),
-        ]),
+          ]),
+        ),
       ),
     );
   }
