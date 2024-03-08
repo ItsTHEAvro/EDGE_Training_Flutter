@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class GetPosts extends StatefulWidget {
-  const GetPosts({super.key});
+class GetSinglePost extends StatefulWidget {
+  const GetSinglePost({super.key});
 
   @override
-  State<GetPosts> createState() => _GetPostsState();
+  State<GetSinglePost> createState() => _GetSinglePostState();
 }
 
-class _GetPostsState extends State<GetPosts> {
+class _GetSinglePostState extends State<GetSinglePost> {
   String posts = "No data";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Get Posts"),
+        title: const Text("Get Single Post"),
         actions: [
           TextButton(
             onPressed: () async {
               var response = await http.get(
-                Uri.parse("https://jsonplaceholder.typicode.com/posts/"),
+                Uri.parse("https://jsonplaceholder.typicode.com/posts/1"),
               );
 
               setState(() {
@@ -27,7 +27,7 @@ class _GetPostsState extends State<GetPosts> {
               });
             },
             child: const Text(
-              "Get Posts",
+              "Get Post",
               style: TextStyle(fontSize: 16),
             ),
           ),

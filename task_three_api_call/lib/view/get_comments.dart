@@ -1,33 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class GetPosts extends StatefulWidget {
-  const GetPosts({super.key});
+class GetComments extends StatefulWidget {
+  const GetComments({super.key});
 
   @override
-  State<GetPosts> createState() => _GetPostsState();
+  State<GetComments> createState() => _GetCommentsState();
 }
 
-class _GetPostsState extends State<GetPosts> {
-  String posts = "No data";
+class _GetCommentsState extends State<GetComments> {
+  String comments = "No data";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Get Posts"),
+        title: const Text("Get Comments"),
         actions: [
           TextButton(
             onPressed: () async {
               var response = await http.get(
-                Uri.parse("https://jsonplaceholder.typicode.com/posts/"),
+                Uri.parse(
+                    "https://jsonplaceholder.typicode.com/posts/1/comments"),
               );
 
               setState(() {
-                posts = response.body;
+                comments = response.body;
               });
             },
             child: const Text(
-              "Get Posts",
+              "Get Comments",
               style: TextStyle(fontSize: 16),
             ),
           ),
@@ -41,7 +42,7 @@ class _GetPostsState extends State<GetPosts> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(8),
           child: Center(
-            child: Text(posts),
+            child: Text(comments),
           ),
         ),
       ),
